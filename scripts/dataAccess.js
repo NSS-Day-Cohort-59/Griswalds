@@ -1,23 +1,11 @@
 import keyObj from "./.Settings.js" // Imports the object that holds our API keys
 
 const applicationState = {
-    parks: [
-
-    ],
-    bizarraries: [
-
-    ],
-    eateries: [
-
-    ],
-    itineraries: [
-
-    ],
-    weather: [
-
-    ],
-    itineraries: []
-
+    parks: [],
+    bizarraries: [],
+    eateries: [],
+    itineraries: [],
+    weather: [],
 }
 
 
