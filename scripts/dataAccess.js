@@ -1,20 +1,11 @@
 import keyObj from "./.Settings.js" // Imports the object that holds our API keys
 
 const applicationState = {
-    parks: [
-
-    ],
-    bizarraries: [
-
-    ],
-    eateries: [
-
-    ],
-    weather: [
-
-    ],
-    itineraries: []
-
+    parks: [],
+    bizarraries: [],
+    eateries: [],
+    itineraries: [],
+    weather: [],
 }
 
 
@@ -96,6 +87,17 @@ export const fetchParks = () => {
         )
 }
 
+const itineraryAPI = `http://localhost:8088`
+
+export const fetchItineraries = () => {
+    return fetch(`${itineraryAPI}/itineraries`)
+        .then(response => response.json())
+        .then(
+            (data) => {
+                applicationState.itineraries = [...data]
+            }
+        )
+}
 //Functions for exporting copies of data from application state
 export const getParks = () => applicationState.parks.map(park => ({ ...park }))
 export const getBizarraries = () => applicationState.bizarraries.map(bizarrary => ({ ...bizarrary }))
