@@ -1,3 +1,5 @@
+import keyObj from "./.Settings.js" // Imports the object that holds our API keys
+
 const applicationState = {
     parks: [
 
@@ -43,7 +45,7 @@ export const fetchBizarraries = () => {
         .then(response => response.json())
         .then(
             (Requests) => {
-            // Store the external state in application state
+                // Store the external state in application state
                 applicationState.bizarraries = Requests
             }
         )
@@ -58,6 +60,37 @@ export const fetchEateries = () => {
             (Requests) => {
                 // Store the external state in application state
                 applicationState.eateries = Requests
+            }
+        )
+}
+
+const parkAPI = "http://developer.nps.gov/api/v1"
+
+const physicalParkAddress = (park) => {
+    for (const address of park.addresses) {
+        if (Object.values(address).includes("Physical")) {
+            return address
+        }
+    }
+}
+
+export const fetchParks = () => {
+    return fetch(`${parkAPI}/parks?api_key=${keyObj.npsKey}&limit=20`)
+        .then(response => response.json())
+        .then(
+            (responseArr) => {
+                const parks = responseArr.data // Grabs only the data for the parks
+                for (const park of parks) {
+                    const parkObj = {
+                        id: park.id,
+                        name: park.fullName,
+                        address: physicalParkAddress(park),
+                        description: park.description,
+                        longitude: park.longitude,
+                        latitude: park.latitude
+                    }
+                    applicationState.parks.push(parkObj)
+                }
             }
         )
 }
