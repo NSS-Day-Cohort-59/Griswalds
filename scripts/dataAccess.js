@@ -10,6 +10,9 @@ const applicationState = {
     eateries: [
 
     ],
+    itineraries: [
+
+    ],
     weather: [
 
     ]
@@ -91,6 +94,18 @@ export const fetchParks = () => {
                     }
                     applicationState.parks.push(parkObj)
                 }
+            }
+        )
+}
+
+const itineraryAPI = `http://localhost:8088`
+
+export const fetchItineraries = () => {
+    return fetch(`${itineraryAPI}/itineraries`)
+        .then(response => response.json())
+        .then(
+            (data) => {
+                applicationState.itineraries = [...data]
             }
         )
 }
