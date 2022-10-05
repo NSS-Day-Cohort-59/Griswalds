@@ -1,4 +1,4 @@
-import keyObj from "./.Settings.js" // Imports the object that holds our API keys
+import keyObj from "./Settings.js" // Imports the object that holds our API keys
 
 const applicationState = {
     parks: [],
