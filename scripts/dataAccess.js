@@ -10,7 +10,8 @@ const applicationState = {
     ],
     weather: [
 
-    ]
+    ],
+    itineraries: []
 
 }
 
@@ -43,7 +44,7 @@ export const fetchBizarraries = () => {
         .then(response => response.json())
         .then(
             (Requests) => {
-            // Store the external state in application state
+                // Store the external state in application state
                 applicationState.bizarraries = Requests
             }
         )
@@ -61,3 +62,10 @@ export const fetchEateries = () => {
             }
         )
 }
+
+//Functions for exporting copies of data from application state
+export const getParks = () => applicationState.parks.map(park => ({ ...park }))
+export const getBizarraries = () => applicationState.bizarraries.map(bizarrary => ({ ...bizarrary }))
+export const getEateries = () => applicationState.eateries.map(eatery => ({ ...eatery }))
+export const getItineraries = () => applicationState.itineraries.map(itinerary => ({ ...itinerary }))
+export const getWeather = () => applicationState.weather.map(weatherObj => ({ ...weatherObj }))
