@@ -6,7 +6,7 @@ export const Dropdowns = () => {
     const bizarraries = getBizarraries()
     const eateries = getEateries()
     let html = `<div class="field">
-            <label class="label" for="author">National Parks</label>
+            <label class="label" for="park">National Parks</label>
             <select class="park" name="park">
             <option value="park">Choose National Park</option>`
                 parks.map(
@@ -18,7 +18,7 @@ export const Dropdowns = () => {
             </select> 
         </div>
         <div class="field">
-        <label class="label" for="author">Bizarraries</label>
+        <label class="label" for="bizarrarie">Bizarraries</label>
         <select class="bizarrarie" name="bizarrarie">
         <option value="bizarrarie">Choose Bizarrarie</option>`
         bizarraries.map(
@@ -30,7 +30,7 @@ export const Dropdowns = () => {
         </select>
     </div>
     <div class="field">
-    <label class="label" for="author">Eateries</label>
+    <label class="label" for="eaterie">Eateries</label>
     <select class="eaterie" name="eaterie">
     <option value="eaterie">Choose Eaterie</option>`
         eateries.map(
