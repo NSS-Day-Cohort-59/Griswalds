@@ -38,7 +38,7 @@ export const setEaterie = (eaterieId) => {
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
-const bizarrarieAPI = "http://holidayroad.nss.team/bizarreries"
+const bizarrarieAPI = "http://holidayroad.nss.team/bizarraries"
 
 export const fetchBizarraries = () => {
     return fetch(`${bizarrarieAPI}`)
