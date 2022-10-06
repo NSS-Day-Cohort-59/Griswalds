@@ -53,6 +53,12 @@ let parkDisplay = 1
 let bizarrerieDisplay = 1
 let eaterieDisplay = 1
 
+export const resetInfoButtons = () => {
+    parkDisplay !== 1 ? parkDisplay = 1 : null
+    bizarrerieDisplay !== 1 ? bizarrerieDisplay = 1 : null
+    eaterieDisplay !== 1 ? eaterieDisplay = 1 : null
+}
+
 mainContainer.addEventListener(
     "click",
     event => {

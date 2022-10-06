@@ -1,17 +1,48 @@
 .itineraries {
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
+}
+
+.info-div {
+    padding-top: -1rem;
+    overflow: wrap;
+}
+
+.info-div > h4 {
+    height: fit-content;
 }
 
 li {
     list-style: none;
 }
 
-.itineraryForm {
-    order: 1;
-    flex-direction: column;
+#itineraryForm {
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 28%;
+}
+
+#dropdowns, #completedItinerary {
+    flex: 0 0 auto;
+}
+
+.preview-article {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.preview-article > h4 {
+    width: fit-content;
+    margin-right: 1rem;
+}
+
+.preview-btn {
+    align-self: center;
+    height: fit-content;
+    width: fit-content;
+    margin: 0rem;
 }
 
 .completedItinerary {
