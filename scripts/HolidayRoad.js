@@ -5,8 +5,9 @@ import { CreateItinerary } from "./preview.js"
 
 export const HolidayRoad = () => {
     return `
-    <h1>Holiday Road - Itinerary Form</h1>
+    <section class="itineraries">
     <section class="main-sections" id="dropdowns">
+    <h1>Holiday Road - Itinerary Form</h1>
         ${Dropdowns()}
     </section>
     <section class="main-sections" id="itineraryForm">
@@ -15,7 +16,7 @@ export const HolidayRoad = () => {
     <section class="main-sections" id="completedItinerary">
         <h2>Saved Itineraries</h2>
         ${SavedItineraries()}
-    </section></section>
+    </section></section></section>
 
     <footer>
         <p>Copyright 2022 bla bla bla don't copy us and stuff</p>
