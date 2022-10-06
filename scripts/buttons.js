@@ -101,7 +101,7 @@ mainContainer.addEventListener(
                 document.querySelector("#eaterie-info").innerHTML = ""
                 eaterieDisplay--
             }
-        } 
-        
+        }
+
     }
 )
