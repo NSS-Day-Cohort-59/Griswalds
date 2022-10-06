@@ -1,5 +1,6 @@
 import { fetchBizarreries, fetchParks, fetchEateries, fetchItineraries, fetchWeatherForecast, getWeather } from "./dataAccess.js"
 import { HolidayRoad } from "./HolidayRoad.js"
+import { resetInfoButtons } from "./buttons.js"
 // Purposefully left out fetchWeather, because that gets called when the user selects a park
 
 const mainContainer = document.querySelector("#container")
@@ -24,5 +25,6 @@ mainContainer.addEventListener(
     "stateChanged",
     event => {
         renderHTML()
+        resetInfoButtons()
     }
 )

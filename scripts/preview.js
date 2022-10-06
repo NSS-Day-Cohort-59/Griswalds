@@ -7,6 +7,7 @@ import { Dropdowns } from "./dropdowns.js";
 export const CreateItinerary = () => {
     let html = `<section id="preview-section">
     ${Buttons()}
+    <div class="weather_display" id="weatherDisplay"></div>
     <button class="save_btn" id="submitItinerary">Save Itinerary</button>`
     // name of park && details button containing address and description
     // name of bizarrarie && details button containing city, state, description, and amenities (souvenirs and restrooms)
@@ -24,9 +25,9 @@ const mainContainer = document.querySelector("#container")
 mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "submitItinerary") {
         // Get what the user typed into the form fields
-        const park = transientState.selectedPark
-        const bizarrerie = transientState.selectedbizarrerie
-        const eaterie = transientState.selectedEaterie
+        const park = transientState.parkId
+        const bizarrerie = transientState.bizarrerieId
+        const eaterie = transientState.eaterieId
 
         // Make an object out of the user input
         const dataToSendToAPI = {
