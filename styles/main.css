@@ -1,18 +1,25 @@
 .itineraries {
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+}
+
+.info-div {
+    overflow: wrap;
 }
 
 li {
     list-style: none;
 }
 
-.itineraryForm {
-    order: 1;
-    flex-direction: column;
+#itineraryForm {
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 28%;
 }
+
+
 
 .completedItinerary {
     order:2; 

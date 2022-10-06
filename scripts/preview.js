@@ -19,9 +19,9 @@ const mainContainer = document.querySelector("#container")
 mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "submitItinerary") {
         // Get what the user typed into the form fields
-        const park = transientState.selectedPark
-        const bizarrerie = transientState.selectedbizarrerie
-        const eaterie = transientState.selectedEaterie
+        const park = transientState.parkId
+        const bizarrerie = transientState.bizarrerieId
+        const eaterie = transientState.eaterieId
 
         // Make an object out of the user input
         const dataToSendToAPI = {
