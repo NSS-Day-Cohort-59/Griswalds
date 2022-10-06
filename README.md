@@ -18,7 +18,7 @@ After each teammate clones the repository, each must perform the following steps
 
 * List all national parks in a dropdown. When user chooses one, display the name of the park in the **Itinerary Preview** section.
 
-* List all bizarraries in a dropdown. When user chooses one, display the name of the bizarre attraction in the **Itinerary Preview** section.
+* List all bizarreries in a dropdown. When user chooses one, display the name of the bizarre attraction in the **Itinerary Preview** section.
 
 * List all eateries in a dropdown. When user chooses one, display the name of the eatery in the **Itinerary Preview** section.
 

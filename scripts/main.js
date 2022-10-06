@@ -1,4 +1,4 @@
-import { fetchBizarreries, fetchParks, fetchEateries, fetchItineraries } from "./dataAccess.js"
+import { fetchBizarreries, fetchParks, fetchEateries, fetchItineraries, fetchWeatherForecast, getWeather } from "./dataAccess.js"
 import { HolidayRoad } from "./HolidayRoad.js"
 // Purposefully left out fetchWeather, because that gets called when the user selects a park
 
