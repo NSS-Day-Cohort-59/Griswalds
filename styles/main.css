@@ -1,3 +1,7 @@
+h1 h2 h3 h4 h5 h6{
+    text-align: center;
+}
+
 body {
     background: url(https://static.vecteezy.com/system/resources/previews/000/224/422/original/vector-desert-landscape-illustration.jpg);
     background-repeat: no-repeat;
@@ -20,17 +24,13 @@ body {
     height: fit-content;
 }
 
-li {
+ul li {
     list-style: none;
     margin: 0px;
     padding: 0px;
 }
 
 .itineraryForm {
-    order: 1;
-    flex-direction: column;
-    max-width: 500px;
-#itineraryForm {
     display: flex;
     flex-flow: column nowrap;
     max-width: 28%;
@@ -92,7 +92,7 @@ section {
     background: url('https://www.clipartmax.com/png/full/29-290328_brown-bear-american-black-bear-clip-art-bear-vector.png') no-repeat left;
     padding: 1rem 0 1rem 35px;
     background-size: 30px 30px;
-    background-color: #d3ce87;
+    background-color: #a8df96;
     outline: dotted 2px #737373;
     margin-top: 1%;
 }
@@ -101,7 +101,7 @@ section {
     background: url('https://www.onlygfx.com/wp-content/uploads/2016/11/tree-silhouette-2-2.png') no-repeat left;
     padding: 1rem 0 1rem 35px;
     background-size: 30px 30px;
-    background-color: #c4bb52;
+    background-color: #70c964;
     outline: dotted 2px #737373;
     margin-top: 1%;
 }
@@ -123,3 +123,8 @@ section {
     background-color: #d5ffc6;
 }
 
+footer{
+    background-color: wheat;
+    font-size: larger;
+    
+}
