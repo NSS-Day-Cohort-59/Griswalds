@@ -2,7 +2,7 @@ import keyObj from "./Settings.js" // Imports the object that holds our API keys
 
 const applicationState = {
     parks: [],
-    bizarraries: [],
+    bizarreries: [],
     eateries: [],
     itineraries: [],
     weather: [],
@@ -15,26 +15,26 @@ export const transientState = {
 
 
 export const setPark = (parkId) => {
-    transientState.selectedPark = parkId
+    transientState.parkId = parkId
 }
 
-export const setBizarrarie = (bizarrarieId) => {
-    transientState.selectedBizarrarie = bizarrarieId
+export const setBizarrerie = (bizarrerieId) => {
+    transientState.bizarrerieId = bizarrerieId
 }
 
 export const setEaterie = (eaterieId) => {
-    transientState.selectedEaterie = eaterieId
+    transientState.eaterieId = eaterieId
 }
 
-const bizarrarieAPI = "http://holidayroad.nss.team/bizarreries"
+const bizarrerieAPI = "http://holidayroad.nss.team/bizarreries"
 
-export const fetchBizarraries = () => {
-    return fetch(`${bizarrarieAPI}`)
+export const fetchBizarreries = () => {
+    return fetch(`${bizarrerieAPI}`)
         .then(response => response.json())
         .then(
             (Requests) => {
                 // Store the external state in application state
-                applicationState.bizarraries = Requests
+                applicationState.bizarreries = Requests
             }
         )
 }
@@ -67,6 +67,7 @@ export const fetchParks = () => {
         .then(response => response.json())
         .then(
             (responseArr) => {
+                applicationState.parks = []
                 const parks = responseArr.data // Grabs only the data for the parks
 
                 for (const park of parks) {
@@ -118,6 +119,8 @@ export const fetchWeatherForecast = (latitude, longitude) => {
         .then(response => response.json())
         .then(
             (data) => {
+                applicationState.weather = []
+
                 const forecastArr = data.list.filter(obj => obj.dt_txt.includes("12:00:00"))
 
                 for (const forecast of forecastArr) {
@@ -137,7 +140,15 @@ export const fetchWeatherForecast = (latitude, longitude) => {
 
 //Functions for exporting copies of data from application state
 export const getParks = () => applicationState.parks.map(park => ({ ...park }))
-export const getBizarraries = () => applicationState.bizarraries.map(bizarrary => ({ ...bizarrary }))
+
+export const getBizarreries = () => applicationState.bizarreries.map(bizarrery => ({ ...bizarrery }))
+
 export const getEateries = () => applicationState.eateries.map(eatery => ({ ...eatery }))
+
 export const getItineraries = () => applicationState.itineraries.map(itinerary => ({ ...itinerary }))
+
 export const getWeather = () => applicationState.weather.map(weatherObj => ({ ...weatherObj }))
+
+export const getTransientState = () => {
+    return { ...transientState }
+}
