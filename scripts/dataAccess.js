@@ -15,20 +15,20 @@ export const transientState = {
 
 
 export const setPark = (parkId) => {
-    transientState.selectedPark = parkId
+    transientState.parkId = parkId
 }
 
 export const setBizarrerie = (bizarrerieId) => {
-    transientState.selectedBizarrerie = bizarrerieId
+    transientState.bizarrerieId = bizarrerieId
 }
 
 export const setEaterie = (eaterieId) => {
-    transientState.selectedEaterie = eaterieId
+    transientState.eaterieId = eaterieId
 }
 
 const bizarrerieAPI = "http://holidayroad.nss.team/bizarreries"
 
-export const fetchbizarreries = () => {
+export const fetchBizarreries = () => {
     return fetch(`${bizarrerieAPI}`)
         .then(response => response.json())
         .then(
@@ -67,6 +67,7 @@ export const fetchParks = () => {
         .then(response => response.json())
         .then(
             (responseArr) => {
+                applicationState.parks = []
                 const parks = responseArr.data // Grabs only the data for the parks
 
                 for (const park of parks) {
@@ -118,6 +119,8 @@ export const fetchWeatherForecast = (latitude, longitude) => {
         .then(response => response.json())
         .then(
             (data) => {
+                applicationState.weather = []
+
                 const forecastArr = data.list.filter(obj => obj.dt_txt.includes("12:00:00"))
 
                 for (const forecast of forecastArr) {
@@ -137,7 +140,15 @@ export const fetchWeatherForecast = (latitude, longitude) => {
 
 //Functions for exporting copies of data from application state
 export const getParks = () => applicationState.parks.map(park => ({ ...park }))
+
 export const getBizarreries = () => applicationState.bizarreries.map(bizarrery => ({ ...bizarrery }))
+
 export const getEateries = () => applicationState.eateries.map(eatery => ({ ...eatery }))
+
 export const getItineraries = () => applicationState.itineraries.map(itinerary => ({ ...itinerary }))
+
 export const getWeather = () => applicationState.weather.map(weatherObj => ({ ...weatherObj }))
+
+export const getTransientState = () => {
+    return { ...transientState }
+}

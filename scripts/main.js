@@ -8,7 +8,7 @@ const renderHTML = () => {
     Promise.all([ // Promise.all waits for a response from every promise before moving to the .then
         fetchParks(),
         fetchEateries(),
-        fetchbizarreries(),
+        fetchBizarreries(),
         fetchItineraries()
     ])
         .then(
