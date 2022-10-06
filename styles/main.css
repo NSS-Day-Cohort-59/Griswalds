@@ -13,6 +13,8 @@ body {
 
 li {
     list-style: none;
+    margin: 0px;
+    padding: 0px;
 }
 
 .itineraryForm {
@@ -41,6 +43,10 @@ li {
     background-color: wheat;
     padding: 1rem 1rem 1rem 1rem;
     border-radius: 50px 50px 50px 50px;
+}
+
+.list_item{
+    margin: none;
 }
 
 section {
@@ -75,3 +81,11 @@ section {
 #eaterie-info{
     background-color: white;
 }
+.save_btn{
+    margin-top: 5%;
+    width: 100%;
+    border-radius: 12px 12px 12px 12px;
+    font-size: larger;
+    background-color: #d5ffc6;
+}
+
