@@ -1,14 +1,13 @@
 import { transientState } from "./dataAccess.js";
 import { Buttons } from "./buttons.js"
 import { showWeather } from "./Weather.js"
-import { Dropdowns } from "./dropdowns.js";
 
 
 export const CreateItinerary = () => {
     let html = `<section id="preview-section">
     ${Buttons()}
     ${showWeather()}
-    <button class="save_btn" id="submitItinerary">Save Itinerary</button>`
+    <button class="save_btn" id="submitItinerary" style="margin-top: 1rem">Save Itinerary</button>`
     // name of park && details button containing address and description
     // name of bizarrarie && details button containing city, state, description, and amenities (souvenirs and restrooms)
     // name of eaterie && details button containing city, state, description and amenities 
