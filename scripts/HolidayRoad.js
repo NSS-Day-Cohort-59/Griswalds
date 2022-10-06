@@ -1,5 +1,5 @@
-import { SavedItineraries } from "./itinerary"
-import { CreateItinerary } from "./preview"
+import { SavedItineraries } from "./itinerary.js"
+import { CreateItinerary } from "./preview.js"
 
 
 export const HolidayRoad = () => {
