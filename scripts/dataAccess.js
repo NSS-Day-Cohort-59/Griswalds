@@ -1,4 +1,4 @@
-import keyObj from "./.Settings.js" // Imports the object that holds our API keys
+import keyObj from "./Settings.js" // Imports the object that holds our API keys
 
 const applicationState = {
     parks: [],
@@ -30,7 +30,7 @@ export const setEaterie = (eaterieId) => {
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
-const bizarrarieAPI = "http://holidayroad.nss.team/bizarraries"
+const bizarrarieAPI = "http://holidayroad.nss.team/bizarreries"
 
 export const fetchBizarraries = () => {
     return fetch(`${bizarrarieAPI}`)
@@ -72,6 +72,7 @@ export const fetchParks = () => {
         .then(
             (responseArr) => {
                 const parks = responseArr.data // Grabs only the data for the parks
+
                 for (const park of parks) {
                     const parkObj = {
                         id: park.id,
@@ -112,6 +113,30 @@ export const sendItinerary = (itineraryObj) => {
         .then(() => {
             document.dispatchEvent(new CustomEvent("stateChanged"))
         })
+}
+
+const weatherAPI = `http://api.openweathermap.org/data/2.5/forecast`
+
+export const fetchWeatherForecast = (latitude, longitude) => {
+    return fetch(`${weatherAPI}?lat=${latitude}&lon=${longitude}&appid=${keyObj.weatherKey}`)
+        .then(response => response.json())
+        .then(
+            (data) => {
+                const forecastArr = data.list.filter(obj => obj.dt_txt.includes("12:00:00"))
+
+                for (const forecast of forecastArr) {
+                    const forecastObj = {
+                        temp: forecast.main.temp,
+                        humidity: forecast.main.humidity,
+                        description: forecast.weather.description,
+                        date: forecast.dt
+                        // temp, humidity, weather.main, datetime(dt)
+                    }
+
+                    applicationState.weather.push(forecastObj)
+                }
+            }
+        )
 }
 
 //Functions for exporting copies of data from application state
