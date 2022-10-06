@@ -6,7 +6,6 @@ import { Dropdowns } from "./dropdowns.js";
 
 export const CreateItinerary = () => {
     let html = `<section id="preview-section">
-    ${Dropdowns()}
     ${Buttons()}
     ${showWeather()}
     <button class="save_btn" id="submitItinerary">Save Itinerary</button>`
