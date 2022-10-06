@@ -1,7 +1,6 @@
 import { transientState } from "./dataAccess.js";
 import { Buttons } from "./buttons.js"
 // import { showWeather } from "./Weather.js"
-import { Dropdowns } from "./dropdowns.js";
 
 
 export const CreateItinerary = () => {
