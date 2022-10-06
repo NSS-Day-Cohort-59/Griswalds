@@ -98,6 +98,22 @@ export const fetchItineraries = () => {
             }
         )
 }
+
+export const sendItinerary = (itineraryObj) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(letterObj)
+    }
+    return fetch(`${itineraryAPI}/itineraries`, fetchOptions)
+        .then(res => res.json())
+        .then(() => {
+            document.dispatchEvent(new CustomEvent("stateChanged"))
+        })
+}
+
 //Functions for exporting copies of data from application state
 export const getParks = () => applicationState.parks.map(park => ({ ...park }))
 export const getBizarraries = () => applicationState.bizarraries.map(bizarrary => ({ ...bizarrary }))
