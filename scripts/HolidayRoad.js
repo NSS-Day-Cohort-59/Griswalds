@@ -4,14 +4,15 @@ import { CreateItinerary } from "./preview.js"
 
 export const HolidayRoad = () => {
     return `
-    <h1>Holiday Road - Itinerary Form</h1>
+    <section class="itineraries">
     <section class="itineraryForm">
+    <h1>Holiday Road - Itinerary Form</h1>
         ${CreateItinerary()}
     </section>
     <section class="completedItinerary">
         <h2>Saved Itineraries</h2>
         ${SavedItineraries()}
-    </section>
+    </section></section>
 
     <footer>
         <p>Copyright 2022 bla bla bla don't copy us and stuff</p>

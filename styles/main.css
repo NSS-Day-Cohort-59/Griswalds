@@ -1,6 +1,24 @@
+.itineraries {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 li {
     list-style: none;
 }
+
+.itineraryForm {
+    order: 1;
+    flex-direction: column;
+}
+
+.completedItinerary {
+    order:2; 
+    flex-direction: column;
+}
+
 
 .color1 {
     background: url('https://www.clipartmax.com/png/full/29-290328_brown-bear-american-black-bear-clip-art-bear-vector.png') no-repeat left;

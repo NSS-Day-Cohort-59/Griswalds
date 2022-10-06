@@ -18,8 +18,8 @@ export const setPark = (parkId) => {
     transientState.selectedPark = parkId
 }
 
-export const setbizarrerie = (bizarrerieId) => {
-    transientState.selectedbizarrerie = bizarrerieId
+export const setBizarrerie = (bizarrerieId) => {
+    transientState.selectedBizarrerie = bizarrerieId
 }
 
 export const setEaterie = (eaterieId) => {
