@@ -1,3 +1,9 @@
+body {
+    background: url(https://static.vecteezy.com/system/resources/previews/000/224/422/original/vector-desert-landscape-illustration.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .itineraries {
     display:flex;
     flex-direction: row;
@@ -12,6 +18,7 @@ li {
 .itineraryForm {
     order: 1;
     flex-direction: column;
+    max-width: 500px;
 }
 
 .completedItinerary {
@@ -19,12 +26,33 @@ li {
     flex-direction: column;
 }
 
+.preview-section{
+    max-width: 20%;
+    padding: 1rem 1rem 2rem 1rem;
+    background-color: wheat;
+    border-radius: 50px 50px 50px 50px;
+}
+.dropdown-section{
+    background-color: wheat;
+    padding: 1rem 1rem 2rem 1rem;
+    border-radius: 50px 50px 50px 50px;
+}
+.saved-section{
+    background-color: wheat;
+    padding: 1rem 1rem 1rem 1rem;
+    border-radius: 50px 50px 50px 50px;
+}
+
+section {
+    max-width: 100%;
+}
+
 
 .color1 {
     background: url('https://www.clipartmax.com/png/full/29-290328_brown-bear-american-black-bear-clip-art-bear-vector.png') no-repeat left;
     padding: 1rem 0 1rem 35px;
     background-size: 30px 30px;
-    background-color: #8cc88b;
+    background-color: #d3ce87;
     outline: dotted 2px #737373;
     margin-top: 1%;
 }
@@ -33,7 +61,17 @@ li {
     background: url('https://www.onlygfx.com/wp-content/uploads/2016/11/tree-silhouette-2-2.png') no-repeat left;
     padding: 1rem 0 1rem 35px;
     background-size: 30px 30px;
-    background-color: #38b771;
+    background-color: #c4bb52;
     outline: dotted 2px #737373;
     margin-top: 1%;
+}
+
+#park-info{
+    background-color: white;
+}
+#bizarrerie-info{
+    background-color: white;
+}
+#eaterie-info{
+    background-color: white;
 }
