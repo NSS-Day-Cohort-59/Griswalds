@@ -45,6 +45,7 @@ ul li {
 .preview-article > h4 {
     width: fit-content;
     margin-right: 1rem;
+    font-size: 0.75rem;
 }
 
 .preview-btn {
