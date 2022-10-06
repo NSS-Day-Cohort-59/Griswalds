@@ -8,10 +8,10 @@ export const Dropdowns = () => {
     let html = `<div class="field">
             <label class="label" for="park">National Parks</label>
             <select class="park" name="park">
-            <option value="park">Choose National Park</option>`
+            <option value="0">Choose National Park</option>`
                 parks.map(
                     park => {
-                        html += `<option value="${park.id}-">${park.name}</option>`
+                        html += `<option value="${park.id}">${park.name}</option>`
                     }
                 ).join("")
             html+=`
@@ -20,7 +20,7 @@ export const Dropdowns = () => {
         <div class="field">
         <label class="label" for="bizarrarie">Bizarraries</label>
         <select class="bizarrarie" name="bizarrarie">
-        <option value="bizarrarie">Choose Bizarrarie</option>`
+        <option value="0">Choose Bizarrarie</option>`
         bizarraries.map(
             bizarrarie => {
                     html += `<option value="${bizarrarie.id}">${bizarrarie.name}</option>`
@@ -32,7 +32,7 @@ export const Dropdowns = () => {
     <div class="field">
     <label class="label" for="eaterie">Eateries</label>
     <select class="eaterie" name="eaterie">
-    <option value="eaterie">Choose Eaterie</option>`
+    <option value="0">Choose Eaterie</option>`
         eateries.map(
             eaterie => {
                 html += `<option value="${eaterie.id}">${eaterie.name}</option>`
