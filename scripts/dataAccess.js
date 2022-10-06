@@ -16,18 +16,14 @@ export const transientState = {
 
 export const setPark = (parkId) => {
     transientState.selectedPark = parkId
-    document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
 export const setBizarrarie = (bizarrarieId) => {
     transientState.selectedBizarrarie = bizarrarieId
-
-    document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
 export const setEaterie = (eaterieId) => {
     transientState.selectedEaterie = eaterieId
-    document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
 const bizarrarieAPI = "http://holidayroad.nss.team/bizarreries"
