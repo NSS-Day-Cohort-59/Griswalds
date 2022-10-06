@@ -127,9 +127,16 @@ export const fetchWeatherForecast = (latitude, longitude) => {
                     const forecastObj = {
                         temp: forecast.main.temp,
                         humidity: forecast.main.humidity,
-                        description: forecast.weather.description,
+                        description: forecast.weather.main,
                         date: forecast.dt
-                        // temp, humidity, weather.main, datetime(dt)
+                        // Temp, Humidity, General Description, Date
+                        /* Possible known description(s): 
+                        -Clouds
+                        -Clear
+                        -Rain
+                        -Snow (Guessing on this one)
+                        *The first 3 are the ones I found when checking 10+ different locations*
+                        */
                     }
 
                     applicationState.weather.push(forecastObj)
