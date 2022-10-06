@@ -100,6 +100,21 @@ export const fetchItineraries = () => {
         )
 }
 
+export const sendItinerary = (itineraryObj) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(itineraryObj)
+    }
+    return fetch(`${itineraryAPI}/itineraries`, fetchOptions)
+        .then(res => res.json())
+        .then(() => {
+            document.dispatchEvent(new CustomEvent("stateChanged"))
+        })
+}
+
 const weatherAPI = `http://api.openweathermap.org/data/2.5/forecast`
 
 export const fetchWeatherForecast = (latitude, longitude) => {
