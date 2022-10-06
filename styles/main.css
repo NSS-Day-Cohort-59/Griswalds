@@ -1,0 +1,21 @@
+li {
+    list-style: none;
+}
+
+.color1 {
+    background: url('https://www.clipartmax.com/png/full/29-290328_brown-bear-american-black-bear-clip-art-bear-vector.png') no-repeat left;
+    padding: 1rem 0 1rem 35px;
+    background-size: 30px 30px;
+    background-color: #8cc88b;
+    outline: dotted 2px #737373;
+    margin-top: 1%;
+}
+
+.color2 {
+    background: url('https://www.onlygfx.com/wp-content/uploads/2016/11/tree-silhouette-2-2.png') no-repeat left;
+    padding: 1rem 0 1rem 35px;
+    background-size: 30px 30px;
+    background-color: #38b771;
+    outline: dotted 2px #737373;
+    margin-top: 1%;
+}

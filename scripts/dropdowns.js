@@ -1,9 +1,9 @@
-import { setPark, setBizarrarie, setEaterie, transientState, getParks, getBizarraries, getEateries } from "./dataAccess.js"
+import { setPark, setbizarrerie, setEaterie, transientState, getParks, getbizarreries, getEateries } from "./dataAccess.js"
 
 
 export const Dropdowns = () => {
     const parks = getParks()
-    const bizarraries = getBizarraries()
+    const bizarreries = getbizarreries()
     const eateries = getEateries()
     let html = `<div class="field">
             <label class="label" for="park">National Parks</label>
@@ -18,12 +18,12 @@ export const Dropdowns = () => {
             </select> 
         </div>
         <div class="field">
-        <label class="label" for="bizarrarie">Bizarraries</label>
-        <select class="bizarrarie" name="bizarrarie">
-        <option value="0">Choose Bizarrarie</option>`
-    bizarraries.map(
-        bizarrarie => {
-            html += `<option value="${bizarrarie.id}">${bizarrarie.name}</option>`
+        <label class="label" for="bizarrerie">bizarreries</label>
+        <select class="bizarrerie" name="bizarrerie">
+        <option value="0">Choose bizarrerie</option>`
+    bizarreries.map(
+        bizarrerie => {
+            html += `<option value="${bizarrerie.id}">${bizarrerie.name}</option>`
         }
     ).join("")
     html += `
@@ -59,9 +59,9 @@ document.addEventListener(
 document.addEventListener(
     "click",
     (event) => {
-        if (event.target.name === "bizarrarie") {
-            const bizarrarieID = event.target.value
-            setBizarrarie(bizarrarieID)
+        if (event.target.name === "bizarrerie") {
+            const bizarrerieID = event.target.value
+            setbizarrerie(bizarrerieID)
         }
     }
 )

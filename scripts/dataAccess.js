@@ -2,7 +2,7 @@ import keyObj from "./Settings.js" // Imports the object that holds our API keys
 
 const applicationState = {
     parks: [],
-    bizarraries: [],
+    bizarreries: [],
     eateries: [],
     itineraries: [],
     weather: [],
@@ -18,23 +18,23 @@ export const setPark = (parkId) => {
     transientState.selectedPark = parkId
 }
 
-export const setBizarrarie = (bizarrarieId) => {
-    transientState.selectedBizarrarie = bizarrarieId
+export const setbizarrerie = (bizarrerieId) => {
+    transientState.selectedbizarrerie = bizarrerieId
 }
 
 export const setEaterie = (eaterieId) => {
     transientState.selectedEaterie = eaterieId
 }
 
-const bizarrarieAPI = "http://holidayroad.nss.team/bizarreries"
+const bizarrerieAPI = "http://holidayroad.nss.team/bizarreries"
 
-export const fetchBizarraries = () => {
-    return fetch(`${bizarrarieAPI}`)
+export const fetchbizarreries = () => {
+    return fetch(`${bizarrerieAPI}`)
         .then(response => response.json())
         .then(
             (Requests) => {
                 // Store the external state in application state
-                applicationState.bizarraries = Requests
+                applicationState.bizarreries = Requests
             }
         )
 }
@@ -137,7 +137,7 @@ export const fetchWeatherForecast = (latitude, longitude) => {
 
 //Functions for exporting copies of data from application state
 export const getParks = () => applicationState.parks.map(park => ({ ...park }))
-export const getBizarraries = () => applicationState.bizarraries.map(bizarrary => ({ ...bizarrary }))
+export const getBizarreries = () => applicationState.bizarreries.map(bizarrery => ({ ...bizarrery }))
 export const getEateries = () => applicationState.eateries.map(eatery => ({ ...eatery }))
 export const getItineraries = () => applicationState.itineraries.map(itinerary => ({ ...itinerary }))
 export const getWeather = () => applicationState.weather.map(weatherObj => ({ ...weatherObj }))
