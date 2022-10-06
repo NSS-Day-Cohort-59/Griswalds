@@ -7,7 +7,7 @@ import { Dropdowns } from "./dropdowns.js";
 export const CreateItinerary = () => {
     let html = `<section id="preview-section">
     ${Buttons()}
-    ${showWeather()}
+    <div class="weather_display" id="weatherDisplay"></div>
     <button class="save_btn" id="submitItinerary">Save Itinerary</button>`
     // name of park && details button containing address and description
     // name of bizarrarie && details button containing city, state, description, and amenities (souvenirs and restrooms)
