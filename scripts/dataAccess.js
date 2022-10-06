@@ -106,7 +106,7 @@ export const sendItinerary = (itineraryObj) => {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(letterObj)
+        body: JSON.stringify(itineraryObj)
     }
     return fetch(`${itineraryAPI}/itineraries`, fetchOptions)
         .then(res => res.json())
