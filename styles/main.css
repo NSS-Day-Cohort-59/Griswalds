@@ -78,6 +78,7 @@ ul li {
 
 .list_item{
     margin: none;
+    padding: 0;
 }
 
 section {
@@ -91,7 +92,7 @@ section {
     background-size: 30px 30px;
     background-color: #a8df96;
     outline: dotted 2px #737373;
-    margin-top: 1%;
+    margin-top: 1%;,
 }
 
 .color2 {
@@ -104,13 +105,13 @@ section {
 }
 
 #park-info{
-    background-color: white;
+    background-color: rgb(249, 247, 228);
 }
 #bizarrerie-info{
-    background-color: white;
+    background-color: rgb(249, 247, 228);
 }
 #eaterie-info{
-    background-color: white;
+    background-color: rgb(249, 247, 228);
 }
 .save_btn{
     margin-top: 5%;
