@@ -12,14 +12,16 @@ export const HolidayRoad = () => {
         ${Dropdowns()}
     </section>
     <section class="preview-section" id="itineraryForm">
+        <h2>Itinerary Preview</h2>
         ${CreateItinerary()}
     </section>
     <section class="saved-section" id="completedItinerary">
         <h2>Saved Itineraries</h2>
         ${SavedItineraries()}
         </section>
+        <div class="break"></div>
         <section class="weather" id="weather">
-        <h5>Weather</h5>
+        <h2>Weather</h2>
         <div class="weather_display" id="weatherDisplay">${showWeather()}</div>
     </section></section></section>
     `

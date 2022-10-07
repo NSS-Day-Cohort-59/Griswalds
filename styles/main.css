@@ -170,14 +170,19 @@ footer{
     height: auto;   /* Height of the footer */
     
 }
-
-/* table {
-    transform:rotate(-90deg);  
-}
-table th, table td{
-    transform:rotate(90deg);
-} */
-
+table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  tbody {
+      display: flex;
+      flex-direction: row;
+  }
+  tr {
+      display: flex;
+      flex-direction: column;
+  }
   
 .weather{
         max-width: fit-content;
@@ -185,4 +190,11 @@ table th, table td{
         background-color: wheat;
         border-radius: 50px 50px 50px 50px;
         border-width: 2px;
+margin-right: 2%;
+margin-top: 2%;
     }
+
+    .break {
+        flex-basis: 100%;
+        height: 0;
+      }
