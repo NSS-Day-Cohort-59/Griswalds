@@ -116,6 +116,33 @@ export const saveItinerary = (itineraryObj) => {
 }
 
 const weatherAPI = `http://api.openweathermap.org/data/2.5/forecast`
+const returnDay = (numberOfDay) => {
+    switch (numberOfDay) {
+        case 0:
+            return "Sunday"
+            break
+        case 1:
+            return "Monday"
+            break
+        case 2:
+            return "Tuesday"
+            break
+        case 3:
+            return "Wednesday"
+            break
+        case 4:
+            return "Thursday"
+            break
+        case 5:
+            return "Friday"
+            break
+        case 6:
+            return "Saturday"
+            break
+        default:
+            console.log(`Error with switch statement.`)
+    }
+}
 
 export const fetchWeatherForecast = (latitude, longitude) => {
     return fetch(`${weatherAPI}?units=imperial&lat=${latitude}&lon=${longitude}&appid=${keyObj.weatherKey}`)
@@ -131,7 +158,7 @@ export const fetchWeatherForecast = (latitude, longitude) => {
                         temp: forecast.main.temp,
                         humidity: forecast.main.humidity,
                         description: forecast.weather[0].description,
-                        date: forecast.dt_txt.split(" ").slice(0, 1),
+                        date: returnDay(new Date(forecast.dt_txt).getDay()),
                         icon: `http://openweathermap.org/img/wn/` + forecast.weather[0].icon + `@2x.png`
                         // Temp, Humidity, General Description, Date
                         /* Possible known description(s): 
