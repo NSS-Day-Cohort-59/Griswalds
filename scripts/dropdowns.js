@@ -3,14 +3,14 @@ import { setPark, setBizarrerie, setEaterie, getParks, getBizarreries, getEateri
 
 export const Dropdowns = () => {
     const isSelected = (id, keyName) => {
-        return transientState[keyName] === id ? `selected` : `` 
+        return transientState[keyName] === id ? `selected` : ``
     }
 
     const transientState = getTransientState()
     const parks = getParks()
     const bizarreries = getBizarreries()
     const eateries = getEateries()
-    
+
     let html = `<div class="field">
             <label class="label" for="park">National Parks</label>
             <select class="park" name="park">
@@ -42,7 +42,7 @@ export const Dropdowns = () => {
     eateries.map(
         eaterie => {
             html += `<option value="${eaterie.id}" ${isSelected(eaterie.id, "eaterieId")}>${eaterie.businessName}</option>`
-    
+
         }
     ).join("")
     html += `
@@ -61,6 +61,7 @@ document.addEventListener(
         if (event.target.name === "park") {
             const parkID = event.target.value
             setPark(parkID) // We don't parseInt this one because its ID is a string in our database
+
 
             mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
         }
@@ -90,19 +91,3 @@ document.addEventListener(
         }
     }
 )
-
-//Listener enables save button when all three dropdowns have been selected
-//Listen for change
-document.addEventListener("change", e => {
-    //Store all dropdown elements in variables
-    const parkDropdown = document.querySelector(".park")
-    const bizarrerieDropdown = document.querySelector(".bizarrerie")
-    const eateryDropdown = document.querySelector(".eaterie")
-    //If park, eatery and bizarrery selected...
-    if (parseInt(parkDropdown.value) && parseInt(bizarrerieDropdown.value) && parseInt(eateryDropdown.value)) {
-        //Store save button element in variable
-        const saveButton = document.querySelector("#submitItinerary")
-        //Set "disabled" to false on save button element
-        saveButton.disabled = false
-    }
-})
