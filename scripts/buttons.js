@@ -73,6 +73,11 @@ mainContainer.addEventListener(
                 <h4 style="margin-bottom: 0rem; height: fit-content; text-decoration: underline">Description</h4><p style="margin-top: 0rem; height: fit-content">${park.description}</p>`
 
                 parkDisplay++
+
+                document.querySelector("#bizarrerie-info").innerHTML = ``
+                document.querySelector("#eaterie-info").innerHTML = ``
+                bizarrerieDisplay = 1
+                eaterieDisplay = 1
             } else {
                 document.querySelector("#park-info").innerHTML = ""
                 parkDisplay--
@@ -88,6 +93,11 @@ mainContainer.addEventListener(
                 <h4 style="margin-bottom: 0rem; height: fit-content; text-decoration: underline">Description</h4><p style="margin-top: 0rem; height: fit-content">${bizarrerie.description}</p>`
 
                 bizarrerieDisplay++
+
+                document.querySelector("#park-info").innerHTML = ``
+                document.querySelector("#eaterie-info").innerHTML = ``
+                parkDisplay = 1
+                eaterieDisplay = 1
             } else {
                 document.querySelector("#bizarrerie-info").innerHTML = ""
                 bizarrerieDisplay--
@@ -103,6 +113,11 @@ mainContainer.addEventListener(
                 <h4 style="margin-bottom: 0rem; height: fit-content; text-decoration: underline">Description</h4><p style="margin-top: 0rem; height: fit-content">${eaterie.description}</p>`
 
                 eaterieDisplay++
+
+                document.querySelector("#bizarrerie-info").innerHTML = ``
+                document.querySelector("#park-info").innerHTML = ``
+                bizarrerieDisplay = 1
+                parkDisplay = 1
             } else {
                 document.querySelector("#eaterie-info").innerHTML = ""
                 eaterieDisplay--
