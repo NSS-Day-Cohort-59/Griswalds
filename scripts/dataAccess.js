@@ -9,10 +9,11 @@ const applicationState = {
 }
 
 
-export const transientState = {
+export let transientState = {
 
 }
 
+const mainContainer = document.querySelector("#container")
 
 export const setPark = (parkId) => {
     transientState.parkId = parkId
@@ -97,7 +98,7 @@ export const fetchItineraries = () => {
         )
 }
 
-export const sendItinerary = (itineraryObj) => {
+export const saveItinerary = (itineraryObj) => {
     const fetchOptions = {
         method: "POST",
         headers: {
@@ -105,10 +106,11 @@ export const sendItinerary = (itineraryObj) => {
         },
         body: JSON.stringify(itineraryObj)
     }
+    transientState = {}
     return fetch(`${itineraryAPI}/itineraries`, fetchOptions)
         .then(res => res.json())
         .then(() => {
-            document.dispatchEvent(new CustomEvent("stateChanged"))
+            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
         })
 }
 
