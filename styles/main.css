@@ -85,7 +85,7 @@ ul li {
 
 .completedItinerary {
     order:2; 
-    flex-direction: column;
+    flex-direction: column-reverse;
 }
 
 .preview-section{
@@ -118,6 +118,9 @@ ul li {
 .list_item{
     margin: none;
     padding: 0;
+    height: 380px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 section {
@@ -190,8 +193,8 @@ table {
         background-color: wheat;
         border-radius: 50px 50px 50px 50px;
         border-width: 2px;
-margin-right: 2%;
-margin-top: 2%;
+        margin-right: 2%;
+        margin-top: 2%;
     }
 
     .break {
