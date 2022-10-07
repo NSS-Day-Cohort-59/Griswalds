@@ -129,7 +129,7 @@ export const fetchWeatherForecast = (latitude, longitude) => {
                         humidity: forecast.main.humidity,
                         description: forecast.weather.main,
                         date: forecast.dt,
-                        icon: `http://openweathermap.org/img/wn/` + forecast.icon `@2x.png`
+                        icon: `http://openweathermap.org/img/wn/` + forecast.icon + `@2x.png`
                         // Temp, Humidity, General Description, Date
                         /* Possible known description(s): 
                         -Clouds
