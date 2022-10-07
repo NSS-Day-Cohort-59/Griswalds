@@ -1,8 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Didact Gothic');
+
 
 body {
     background: url(https://static.vecteezy.com/system/resources/previews/000/224/422/original/vector-desert-landscape-illustration.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Didact Gothic'; 
+    font-size: 16px;
+}
+
+h1{
+    font-family: 'Didact Gothic';
+    font-size: 22px;
+    text-align: center;
+}
+
+h2{
+    font-family: 'Didact Gothic';
+    font-size: 22px;
+    text-align: center;
+}
+
+h4{
+    font-family: 'Didact Gothic';
+    font-size: 16px;
 }
 
 .itineraries {
@@ -61,20 +82,30 @@ ul li {
 }
 
 .preview-section{
-    max-width: 20%;
+    max-width: 30%;
     padding: 1rem 1rem 2rem 1rem;
     background-color: wheat;
     border-radius: 50px 50px 50px 50px;
+    size: 90%;
+    border-color: black;
+    border-width: 2px;
 }
 .dropdown-section{
+    max-width: 30%;
+    max-height: 80%;
     background-color: wheat;
     padding: 1rem 1rem 2rem 1rem;
     border-radius: 50px 50px 50px 50px;
+    size: 90%;
+    border-color: black;
 }
 .saved-section{
+    max-width: 30%;
     background-color: wheat;
-    padding: 1rem 1rem 1rem 1rem;
+    padding: 1rem 1rem 2rem 1rem;
     border-radius: 50px 50px 50px 50px;
+    size: 90%;
+    border-color: black;
 }
 
 .list_item{
@@ -93,7 +124,7 @@ section {
     background-size: 30px 30px;
     background-color: #a8df96;
     outline: dotted 2px #737373;
-    margin-top: 1%;,
+    margin-top: 1%;
 }
 
 .color2 {
@@ -125,5 +156,10 @@ section {
 footer{
     background-color: wheat;
     font-size: larger;
+    padding: 0rem 1rem 0rem 1rem;
+    position: fixed;
+    bottom: 0;
+    width: max-content;
+    height: auto;   /* Height of the footer */
     
 }
