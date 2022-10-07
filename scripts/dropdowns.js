@@ -91,19 +91,3 @@ document.addEventListener(
         }
     }
 )
-
-//Listener enables save button when all three dropdowns have been selected
-//Listen for change
-document.addEventListener("change", e => {
-    //Store all dropdown elements in variables
-    const parkDropdown = document.querySelector(".park")
-    const bizarrerieDropdown = document.querySelector(".bizarrerie")
-    const eateryDropdown = document.querySelector(".eaterie")
-    //If park, eatery and bizarrery selected...
-    if (parseInt(parkDropdown.value) && parseInt(bizarrerieDropdown.value) && parseInt(eateryDropdown.value)) {
-        //Store save button element in variable
-        const saveButton = document.querySelector("#submitItinerary")
-        //Set "disabled" to false on save button element
-        saveButton.disabled = false
-    }
-})
