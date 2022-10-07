@@ -7,15 +7,10 @@ export const showWeather = () => {
     let html = ""
     //if a park is selected...
     if (transientState.parkId) {
-        //find park in applicationState
-        let foundPark = parks.find(park => park.id === transientState.parkId)
-        //call fetchWeather with matching lat. and long.
-        fetchWeatherForecast(foundPark.latitude, foundPark.longitude)
-            .then(() => {
-                //.then append string containing html
-                const forecastArray = getWeather()
-                forecastArray.forEach((forecast) => {
-                    html += `
+        //.then append string containing html
+        const forecastArray = getWeather()
+        forecastArray.forEach((forecast) => {
+            html += `
                     <div class="daily_forecast">
                         <div class="forecast_date">${forecast.date}</div>
                         <img src="${forecast.icon}">
@@ -25,8 +20,7 @@ export const showWeather = () => {
                             <dvi class="forecast_humidity">${forecast.humidity}% Humidity</div>
                         </div>
                     </div>`
-                })
-            })
+        })
     }
     return html
 }
