@@ -1,4 +1,4 @@
-import { setPark, setBizarrerie, setEaterie, getParks, getBizarreries, getEateries, getTransientState } from "./dataAccess.js"
+import { setPark, setBizarrerie, setEaterie, getParks, getBizarreries, getEateries, getTransientState, fetchWeatherForecast } from "./dataAccess.js"
 
 
 export const Dropdowns = () => {
@@ -62,8 +62,13 @@ document.addEventListener(
             const parkID = event.target.value
             setPark(parkID) // We don't parseInt this one because its ID is a string in our database
 
-
-            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+        //find park in applicationState
+            const transientState = getTransientState()
+            const parks = getParks()
+            let foundPark = parks.find(park => park.id === transientState.parkId)
+        //call fetchWeather with matching lat. and long.
+        fetchWeatherForecast(foundPark.latitude, foundPark.longitude)
+            .then(() => mainContainer.dispatchEvent(new CustomEvent("stateChanged")))
         }
     }
 )

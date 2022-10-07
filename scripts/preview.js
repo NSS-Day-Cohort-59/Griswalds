@@ -2,10 +2,10 @@ import { transientState } from "./dataAccess.js";
 import { Buttons } from "./buttons.js"
 import { showWeather } from "./Weather.js";
 import { saveItinerary } from "./dataAccess.js"
-// import { showWeather } from "./Weather.js"
 
 
 export const CreateItinerary = () => {
+    const weatherHTML = showWeather()
     let html = `<section id="preview-section">
     ${Buttons()}
     <div class="weather_display" id="weatherDisplay">${showWeather()}</div>

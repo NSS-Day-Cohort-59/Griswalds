@@ -118,7 +118,7 @@ export const saveItinerary = (itineraryObj) => {
 const weatherAPI = `http://api.openweathermap.org/data/2.5/forecast`
 
 export const fetchWeatherForecast = (latitude, longitude) => {
-    return fetch(`${weatherAPI}?lat=${latitude}&lon=${longitude}&appid=${keyObj.weatherKey}`)
+    return fetch(`${weatherAPI}?units=imperial&lat=${latitude}&lon=${longitude}&appid=${keyObj.weatherKey}`)
         .then(response => response.json())
         .then(
             (data) => {
@@ -130,9 +130,9 @@ export const fetchWeatherForecast = (latitude, longitude) => {
                     const forecastObj = {
                         temp: forecast.main.temp,
                         humidity: forecast.main.humidity,
-                        description: forecast.weather.main,
-                        date: forecast.dt,
-                        icon: `http://openweathermap.org/img/wn/` + forecast.icon + `@2x.png`
+                        description: forecast.weather[0].description,
+                        date: forecast.dt_txt.split(" ").slice(0, 1),
+                        icon: `http://openweathermap.org/img/wn/` + forecast.weather[0].icon + `@2x.png`
                         // Temp, Humidity, General Description, Date
                         /* Possible known description(s): 
                         -Clouds
