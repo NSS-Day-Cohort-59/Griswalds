@@ -107,6 +107,7 @@ export const saveItinerary = (itineraryObj) => {
         body: JSON.stringify(itineraryObj)
     }
     transientState = {}
+    applicationState.weather = []
     return fetch(`${itineraryAPI}/itineraries`, fetchOptions)
         .then(res => res.json())
         .then(() => {
