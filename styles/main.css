@@ -26,8 +26,15 @@ h4{
     font-size: 16px;
 }
 
+h5{
+    font-family: 'Didact Gothic';
+    font-size: 22px;
+    text-align: center;
+}
+
 .itineraries {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
@@ -163,3 +170,19 @@ footer{
     height: auto;   /* Height of the footer */
     
 }
+
+/* table {
+    transform:rotate(-90deg);  
+}
+table th, table td{
+    transform:rotate(90deg);
+} */
+
+  
+.weather{
+        max-width: fit-content;
+        padding: 1rem 1rem 2rem 1rem;
+        background-color: wheat;
+        border-radius: 50px 50px 50px 50px;
+        border-width: 2px;
+    }
