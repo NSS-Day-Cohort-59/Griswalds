@@ -14,7 +14,7 @@ export const showWeather = () => {
             .then(() => {
                 //.then append string containing html
                 const forecastArray = getWeather()
-                forecastArray.forEach((forecast) => {
+                return forecastArray.forEach((forecast) => {
                     html += `
                     <div class="daily_forecast">
                         <div class="forecast_date">${forecast.date}</div>
