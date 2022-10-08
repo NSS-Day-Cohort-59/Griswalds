@@ -5,6 +5,30 @@
       "parkId": "77E0D7F0-1942-494A-ACE2-9004D2BDC59E",
       "bizarrerieId": 2,
       "eaterieId": 3
+    },
+    {
+      "parkId": "64B9F127-31ED-43C9-882D-D7CD471AF314",
+      "bizarrerieId": 6,
+      "eaterieId": 4,
+      "id": 2
+    },
+    {
+      "parkId": "3B8307B3-54AB-4E5F-ACBC-8DECB98AD5F1",
+      "bizarrerieId": 5,
+      "eaterieId": 5,
+      "id": 3
+    },
+    {
+      "parkId": "1A47416F-DAA3-4137-9F30-14AF86B4E547",
+      "bizarrerieId": 4,
+      "eaterieId": 5,
+      "id": 4
+    },
+    {
+      "parkId": "1A47416F-DAA3-4137-9F30-14AF86B4E547",
+      "bizarrerieId": 5,
+      "eaterieId": 6,
+      "id": 5
     }
   ]
 }

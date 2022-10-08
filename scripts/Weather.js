@@ -4,7 +4,7 @@ import { getTransientState, getParks, fetchWeatherForecast, getWeather } from ".
 export const showWeather = () => {
     const transientState = getTransientState()
     const parks = getParks()
-    let html = ""
+    let html = "<table>"
     //if a park is selected...
     if (transientState.parkId) {
         //.then append string containing html
@@ -12,15 +12,18 @@ export const showWeather = () => {
         forecastArray.forEach((forecast) => {
             html += `
                     <div class="daily_forecast">
-                        <div class="forecast_date">${forecast.date}</div>
-                        <img src="${forecast.icon}">
+                        <tr>
+                        <th><img src="${forecast.icon}"></th>
+                        <td><b><div class="forecast_date">${forecast.date}</div></b>
                         <div class="forecast_details">
                             <div class="forecast_description">${forecast.description}</div>
                             <div class="forecast_temp">${forecast.temp}°</div>
-                            <dvi class="forecast_humidity">${forecast.humidity}% Humidity</div>
+                            <div class="forecast_humidity">${forecast.humidity}% Humidity</div></td>
+                            </tr>
                         </div>
                     </div>`
         })
     }
+    html += `</table>`
     return html
 }
